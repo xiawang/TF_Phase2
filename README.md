@@ -1,5 +1,7 @@
 # TensorFlow Experiments Phase 2
 
+The Phase 1 of this project aims to provide simple and easy-to-read code for general TensorFlow usage (since very few online source could provide a clear overview for TensorFlow codes), which can be easily adapted to some TOY programs; however, the Phase 2 of the project will be more focused on the modularization and usage towards the real production.
+
 ### Basic Neural Network & CNN
 
 #### Useful Resources
