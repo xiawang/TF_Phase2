@@ -4,12 +4,16 @@ The Phase 1 of this project aims to provide simple and easy-to-read code for gen
 
 ### Basic Neural Network & CNN
 
+(To be completed...)
+
 #### Useful Resources
 * [**CNN (A Visual Recognition Tutorial by Stanford)**](http://cs231n.github.io/)
-* [**Modularized TensorFlow (A Tutorial by Albert Wang)**](https://github.com/CreatCodeBuild/TensorFlow-and-DeepLearning-Tutorial)
+* [**TF Girls Tutorial (Introduction to CNN by Albert Wang)**](https://github.com/CreatCodeBuild/TensorFlow-and-DeepLearning-Tutorial)
 
 ------
 ### RNN & LSTM
+
+(To be completed...)
 
 #### Useful Resources
 * [**Deep NLP (Oxford Online Course)**](https://github.com/oxford-cs-deepnlp-2017/lectures)
@@ -19,6 +23,8 @@ The Phase 1 of this project aims to provide simple and easy-to-read code for gen
 
 ------
 ### GAN & Conditional GAN
+
+(To be concluded...)
 
 #### Useful Resources
 * [**TensorFlow Tutorial (Tutorials from Morvan Zhou)**](https://github.com/MorvanZhou/Tensorflow-Tutorial)
