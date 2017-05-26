@@ -1,6 +1,7 @@
 # TensorFlow Experiments Phase 2
 
 ### Basic Neural Network & CNN
+------
 
 #### Useful Resources
 * [**CNN (A Visual Recognition Tutorial by Stanford)**](http://cs231n.github.io/)
@@ -8,6 +9,7 @@
 
 
 ### RNN & LSTM
+------
 
 #### Useful Resources
 * [**Deep NLP (Oxford Online Course)**](https://github.com/oxford-cs-deepnlp-2017/lectures)
@@ -17,6 +19,7 @@
 
 
 ### GAN & Conditional GAN
+------
 
 #### Useful Resources
 * [**TensorFlow Tutorial (Tutorials from Morvan Zhou)**](https://github.com/MorvanZhou/Tensorflow-Tutorial)
