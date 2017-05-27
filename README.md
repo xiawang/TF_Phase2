@@ -20,6 +20,7 @@ The Phase 1 of this project aims to provide simple and easy-to-read code for gen
 * [**RNN in TensorFlow (Tutorials from Erik Hallström)**](https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767)
 * [**TensorFlow RNN Examples (Examples by Aymeric Damien)**](https://github.com/aymericdamien/TensorFlow-Examples)
 * [**Understanding LSTM Networks (A Blog by Christopher Olah)**](https://github.com/aymericdamien/TensorFlow-Examples)
+* [**Deep Learning for NLP (A Stanford NLP course)**](http://cs224d.stanford.edu/syllabus.html)
 
 ------
 ### GAN & Conditional GAN
