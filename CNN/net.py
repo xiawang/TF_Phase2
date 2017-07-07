@@ -7,8 +7,7 @@ class Network():
     def __init__(self, train_batch_size, test_batch_size, pooling_scale,
                        dropout_rate, base_learning_rate, decay_rate,
                        optimizeMethod='adam', save_path='model/default.ckpt'):
-        '''
-        '''
+
         self.optimizeMethod = optimizeMethod
         self.dropout_rate=dropout_rate
         self.base_learning_rate=base_learning_rate
@@ -18,8 +17,8 @@ class Network():
         self.test_batch_size = test_batch_size
 
         # Hyper Parameters
-        self.conv_config = []       # list of dict
-        self.fc_config = []         # list of dict
+        self.conv_config = []
+        self.fc_config = []
         self.conv_weights = []
         self.conv_biases = []
         self.fc_weights = []
@@ -55,6 +54,7 @@ class Network():
             'pooling': pooling,
             'name': name
         })
+
         with tf.name_scope(name):
             weights = tf.Variable(
                 tf.truncated_normal([patch_size, patch_size, in_depth, out_depth], stddev=0.1), name=name+'_weights')
@@ -88,17 +88,14 @@ class Network():
         # 1e5
         return _lambda * regularization
 
-    # should make the definition as an exposed API, instead of implemented in the function
     def define_inputs(self, *, train_samples_shape, train_labels_shape, test_samples_shape):
-        # 这里只是定义图谱中的各种变量
         with tf.name_scope('inputs'):
             self.tf_train_samples = tf.placeholder(tf.float32, shape=train_samples_shape, name='tf_train_samples')
             self.tf_train_labels = tf.placeholder(tf.float32, shape=train_labels_shape, name='tf_train_labels')
             self.tf_test_samples = tf.placeholder(tf.float32, shape=test_samples_shape, name='tf_test_samples')
 
     def define_model(self):
-        '''
-        '''
+        
         def model(data_flow, train=True):
             '''
             @data: original inputs
@@ -149,6 +146,7 @@ class Network():
                         raise Exception('Activation Func can only be Relu or None right now. You passed', config['activation'])
             return data_flow
 
+
         # Training computation.
         logits = model(self.tf_train_samples)
         with tf.name_scope('loss'):
@@ -156,7 +154,7 @@ class Network():
             self.loss += self.apply_regularization(_lambda=5e-4)
             self.train_summaries.append(tf.scalar_summary('Loss', self.loss))
 
-        # learning rate decay
+        # Learning rate decay
         global_step = tf.Variable(0)
         learning_rate = tf.train.exponential_decay(
             learning_rate=self.base_learning_rate,
@@ -211,7 +209,6 @@ class Network():
 
             ### training
             print('Start Training')
-            # batch 1000
             for i, samples, labels in train_data_iterator(train_samples, train_labels, iteration_steps=iteration_steps, chunkSize=self.train_batch_size):
                 _, l, predictions, summary = session.run(
                     [self.optimizer, self.loss, self.train_prediction, self.merged_train_summary],
@@ -223,7 +220,6 @@ class Network():
                 if i % 50 == 0:
                     print('Minibatch loss at step %d: %f' % (i, l))
                     print('Minibatch accuracy: %.1f%%' % accuracy)
-            ###
 
             ### testing
             accuracies = []
@@ -241,7 +237,6 @@ class Network():
             print(' Average  Accuracy:', np.average(accuracies))
             print('Standard Deviation:', np.std(accuracies))
             self.print_confusion_matrix(np.add.reduce(confusionMatrices))
-            ###
 
     def train(self, train_samples, train_labels, *, data_iterator, iteration_steps):
         self.writer = tf.train.SummaryWriter('./board', tf.get_default_graph())
@@ -262,7 +257,6 @@ class Network():
                 if i % 50 == 0:
                     print('Minibatch loss at step %d: %f' % (i, l))
                     print('Minibatch accuracy: %.1f%%' % accuracy)
-            ###
 
             # check directory
             import os

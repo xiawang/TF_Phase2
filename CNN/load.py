@@ -82,11 +82,3 @@ _test_samples = normalize(n_test_samples)
 num_labels = 10
 image_size = 32
 num_channels = 1
-
-if __name__ == '__main__':
-    pass
-    inspect(_train_samples, _train_labels, 1234)
-    # _train_samples = normalize(_train_samples)
-    # inspect(_train_samples, _train_labels, 1234)
-    # distribution(train_labels, 'Train Labels')
-    # distribution(test_labels, 'Test Labels')

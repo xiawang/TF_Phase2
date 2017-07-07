@@ -1,6 +1,8 @@
+import load
+from net import Network
+
+
 if __name__ == '__main__':
-    import load
-    from net import Network
 
     train_samples, train_labels = load._train_samples, load._train_labels
     test_samples, test_labels = load._test_samples, load._test_labels
